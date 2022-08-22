@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.musanxian.springboot03web.dao.EmployeeDao">
+    <select id="getAll"  resultType="com.musanxian.springboot03web.pojo.Employee">
+        select *
+        from mybatis.employee;
+    </select>
+
+    <select id="getEmployeeById"  parameterType="int" resultType="com.musanxian.springboot03web.pojo.Employee">
+        select *
+        from mybatis.employee
+        where `id` = #{id};
+    </select>
+
+    <update id="save" parameterType="com.musanxian.springboot03web.pojo.Employee">
+        update mybatis.employee
+        set lastName = #{lastName},email = #{email},gender = #{gender},birth = #{birth},department = #{department}
+        where id = #{id};
+    </update>
+
+    <insert id="add" parameterType="com.musanxian.springboot03web.pojo.Employee">
+        insert into mybatis.employee(lastName, email, gender, birth, department)
+        values (#{lastName},#{email},#{gender},#{birth},#{department});
+    </insert>
+
+    <delete id="delete" parameterType="int">
+        delete from mybatis.employee where `id` = #{id};
+    </delete>
+</mapper>

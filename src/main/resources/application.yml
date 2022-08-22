@@ -1,0 +1,26 @@
+spring:
+  thymeleaf:
+    #\u5173\u95ED\u6A21\u677F\u5F15\u64CE\u7684\u7F13\u5B58
+    cache: false
+  messages:
+    #\u6211\u4EEC\u7684\u914D\u7F6E\u6587\u4EF6\u7684\u771F\u5B9E\u4F4D\u7F6E
+    basename: i18n.login
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/mybatis?useSSL=true&useUnicode=true&characterEnding=UTF-8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+mybatis:
+  #\u8D77\u522B\u540D
+  type-aliases-package: com.mudaxian.springboot03web.pojo
+  mapper-locations: classpath:/mybatis/*.xml
+
+#logging:
+#  file:
+#    name: name:log/log.log
+#  level:
+#    root: info
+#    mudaxian: debug
